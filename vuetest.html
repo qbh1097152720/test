@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 插值表达式 -->
+        <!-- js如何实现？ -->
+        {{message}}
+        <!-- <input v-model="mydata" /> {{mydata}}
+        <div v-text="mydata"></div>  -->
+        <div v-html="myhtml"></div>
+    </div>
+    <!-- {{message}} -->
+</body>
+<script>
+    // 数据优先 ，数据驱动；
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            message:"数据",
+            mydata:"绑定数据",
+            myhtml:"<h1>我的标题</h1>"
+        }
+    })
+    // setTimeout(() => {
+    //     vm.message = "修改的值";
+    // }, 1000);
+    
+</script>
+</html>

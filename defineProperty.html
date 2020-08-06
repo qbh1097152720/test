@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 定义一个对象；
+    // let obj = {
+    //     myname:"张三"
+    // }
+    // obj.myname = "李四";
+
+    // 另一种方式:通过defineProperty创建一个对象；
+//   let newObj = Object.defineProperty({},"myname",{
+//         configurable:true,
+//         enumerable:true,
+//         get(){
+//             console.log("get");
+//             return "张三";
+//         },
+//         set(newValue){
+//             console.log("set",newValue);
+//         }
+//     })
+//    console.log(newObj); 
+// 获取值；get
+// console.log( newObj.myname);
+// 设置；
+// newObj.myname = "李四";
+// delete newObj.myname;
+// console.log(newObj);
+// for(let key in newObj){
+//     console.log(key);
+// }
+    // 修改一个对象；
+    let obj = {
+        myname:"张三"
+    }
+    // console.log(obj);
+    // 有就循环 赋值 没有就不循环
+    // for(let key in obj){
+
+    // }
+    let value = obj['myname'];
+    Object.defineProperty(obj,"myname",{
+        configurable:true,
+        enumerable:true,
+        get(){
+            return value;
+        },
+        set(newValue){
+            console.log("set",newValue);
+            // 错误的写法；
+            // obj['myname'] = newValue;
+            value = newValue;
+            
+        }
+    })
+    // console.log(obj);
+
+    obj.myname = "李四"
+    console.log(obj);
+
+</script>
+</html>

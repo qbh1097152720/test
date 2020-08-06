@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./mvvm4.js"></script>
+</head>
+
+<body>
+    <h1>自己的mvvm</h1>
+    <div id="app">
+        <!-- 12121{{ message }}333 -->
+
+
+        <!-- <div>
+            {{message}}
+            <div >
+                {{message}}
+                <div>
+                    {{message}}
+                </div>
+            </div>
+        </div> -->
+        <!-- 111{{mydata}}222 -->
+        <input type="text" v-model="mydata" />{{mydata}}
+        <div v-html="myhtml"></div>
+    </div>
+</body>
+<script>
+    // 初次渲染；
+    let vm = new KVue({
+        el: "#app",
+        data: {
+            message: "数据",
+            mydata: "我的数据",
+            myhtml: "<h1>我的标题</h1>"
+        }
+    })
+// console.log(vm.$data);
+
+// setTimeout(() => {
+// // //         // vm.message = "修改的值";
+//          console.log("settimeout");
+//         // vm.$data.message = "修改的值"
+//         vm.$data.mydata = "修改了";
+// }, 1000);
+
+
+</script>
+
+</html>
